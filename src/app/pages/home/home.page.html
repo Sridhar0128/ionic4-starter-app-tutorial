@@ -1,20 +1,198 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Home</ion-title>
-    <ion-buttons slot="end">
+  <ion-toolbar style="text-align: center" color="primary">
+    <ion-title>Login Page</ion-title>
+    
       <ion-button [routerLink]="['/new-item']">
-        <ion-icon slot="icon-only" name="add"></ion-icon>
+        <ion-icon slot="icon-only"  name="add"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let item of items" [routerLink]="['/update-item', item.id]">
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cards Example</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="re">
+    <ion-card-header>
+      <ion-card-title>Card 1</ion-card-title>
+      <ion-card-subtitle>Subtitle 1</ion-card-subtitle>
+      <img   src="https://up.yimg.com/ib/th?id=OVP.Z-aRy3-Yme2LRnQT3AA86QHgFo&pid=Api&w=296&h=156&c=7&p=0&rs=1&qlt=95" width="50" height="100">
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum similique ea dolore earum unde, dolores reprehenderit reiciendis temporibus suscipit aperiam!
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="re">
+    <ion-card-header>
+      <ion-card-title>Card 2</ion-card-title>
+      <ion-card-subtitle>Subtitle 2</ion-card-subtitle>
+      <img src="https://up.yimg.com/ib/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&pid=Api&rs=1&c=1&qlt=95&w=245&h=116" width="50" height="100" >
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sint!
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="re">
+    <ion-card-header>
+      <ion-card-title>Card 3</ion-card-title>
+      <ion-card-subtitle>Subtitle 3</ion-card-subtitle>
+      <img src="https://up.yimg.com/ib/th?id=OIP.HxV79tFMPfBAIo0BBF-sOgHaEy&pid=Api&rs=1&c=1&qlt=95&w=180&h=116">
+    </ion-card-header>
+    <ion-card-content>
+     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, amet?
+    </ion-card-content>
+  </ion-card>
+
+
+  
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Range Example</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label>Volume</ion-label>
+      <ion-range min="0" max="100" step="1" [(ngModel)]="volume" color="primary">
+        <ion-icon size="small" slot="start" name="volume-mute"></ion-icon>
+        <ion-icon slot="end" name="volume-high"></ion-icon>
+      </ion-range>
+    </ion-item>
+  
+    <p>Selected Volume: {{ volume }}</p>
+  </ion-content>
+  
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Icons Example</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-icon name="home" slot="start"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-item>
+  
+   
+    <ion-item>
+      <ion-icon name="star" slot="start"></ion-icon>
+      <ion-label>Star</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="heart" slot="start"></ion-icon>
+      <ion-label>heart</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="camera" slot="start"></ion-icon>
+      <ion-label>Camera</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="settings" slot="start"></ion-icon>
+      <ion-label>Settings</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock" slot="start"></ion-icon>
+      <ion-label>Lock</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="contacts" slot="start"></ion-icon>
+      <ion-label>Contacts</ion-label>
+    </ion-item>
+  </ion-content>
+  
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label>Tab 1</ion-label>
+    </ion-item>
+  </ion-content>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label>Tab 2</ion-label>
+    </ion-item>
+  </ion-content>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label>Tab 3</ion-label>
+    </ion-item>
+  </ion-content>
+    
+
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Select Example</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label>Select a Fruit</ion-label>
+      <ion-select [(ngModel)]="selectedFruit" placeholder="Select One">
+        <ion-select-option value="apple">Apple</ion-select-option>
+        <ion-select-option value="banana">Banana</ion-select-option>
+        <ion-select-option value="cherry">Cherry</ion-select-option>
+        <ion-select-option value="date">Date</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
       <ion-label>
-        {{ item.title }}
+        Selected Fruit: {{ selectedFruit ? selectedFruit : 'None' }}
       </ion-label>
     </ion-item>
-  </ion-list>
-</ion-content>
+  </ion-content>
+  
+  </ion-content>
+  
+
+
+
+
+  
+
+
+  
+  
+

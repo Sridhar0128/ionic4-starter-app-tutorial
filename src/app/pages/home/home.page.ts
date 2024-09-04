@@ -8,6 +8,7 @@ import { ItemService } from '../../services/item.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  volume=30;
 
   items: Array<any>;
 

@@ -1,23 +1,31 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>New Item</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+  <ion-toolbar>
+    <ion-title>Checkbox Example</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <form [formGroup]="new_item_form" (submit)="createItem(new_item_form.value)">
+<ion-content>
+  <ion-list>
     <ion-item>
-      <ion-label color="primary" position="floating">Title</ion-label>
-      <ion-input type="text" formControlName="title" required></ion-input>
+      <ion-label>Option 1</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="options.option1"></ion-checkbox>
     </ion-item>
-    <ion-item>
-      <ion-label color="primary" position="floating">Description</ion-label>
-      <ion-input type="text" formControlName="description" required></ion-input>
-    </ion-item>
-    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!new_item_form.valid">Create</ion-button>
-  </form>
 
+    <ion-item>
+      <ion-label>Option 2</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="options.option2"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Option 3</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="options.option3"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="submit()">Submit</ion-button>
+
+  <ion-item *ngIf="selectedOptions.length > 0">
+    <ion-label>Selected Options:</ion-label>
+    <ion-text>{{ selectedOptions.join(', ') }}</ion-text>
+  </ion-item>
 </ion-content>
